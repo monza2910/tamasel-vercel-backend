@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 
 // CORS Setup
 app.use(cors({
-  origin: 'https://motorent-frontend.vercel.app', // ganti dengan domain React-mu
+  origin: 'https://motorent-frontend.vercel.app', 
   credentials: true,               // ⬅️ WAJIB: untuk kirim cookie JWT
 }));
 
