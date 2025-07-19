@@ -6,6 +6,7 @@ const motorSchema = new mongoose.Schema({
   model: { type: String, enum: ['Matic', 'Non-matic'], required: true },
   tersedia: { type: Boolean, default: true }, // true = bisa disewa
   harga: { type: Number, required: true },
+  gambar: String,
   status: {
     type: String,
     enum: ['Tersedia', 'Sedang diservice / dibooking'],
@@ -13,7 +14,6 @@ const motorSchema = new mongoose.Schema({
       return this.tersedia ? 'Tersedia' : 'Sedang diservice / dibooking';
     }
   },
-  gambar: String
 }, { timestamps: true });
 
 const Motor = mongoose.model('Motor', motorSchema);

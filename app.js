@@ -53,15 +53,15 @@ app.use(errorHandler);
 
 
 
-mongoose.connect(process.env.DATABASE_URL).then(() => {
+mongoose.connect("mongodb+srv://monzaniboss:wLZHu9vitQdLU1Qi@tamasel-mongodb-vercel.jydob1u.mongodb.net/?retryWrites=true&w=majority&appName=tamasel-mongodb-vercel").then(() => {
   console.log('✅ MongoDB Atlas Connected!');
 }).catch((err) => {
   console.error('❌ MongoDB Atlas connection error:', err);
 });
 
-app.listen(3100, () => {
-  console.log(`✅ Server is running on port 3100`);
-});
+// app.listen(3100, () => {
+//   console.log(`✅ Server is running on port 3100`);
+// });
 
 
 
