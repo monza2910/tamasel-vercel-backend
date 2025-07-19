@@ -24,7 +24,7 @@ const __dirname = path.dirname(__filename);
 
 // CORS Setup
 app.use(cors({
-  origin: 'http://localhost:3000', // ganti dengan domain React-mu
+  origin: 'https://motorent-frontend.vercel.app', // ganti dengan domain React-mu
   credentials: true,               // ⬅️ WAJIB: untuk kirim cookie JWT
 }));
 
@@ -53,15 +53,14 @@ app.use(errorHandler);
 
 
 
-mongoose.connect("mongodb+srv://monzaniboss:wLZHu9vitQdLU1Qi@tamasel-mongodb-vercel.jydob1u.mongodb.net/?retryWrites=true&w=majority&appName=tamasel-mongodb-vercel").then(() => {
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(() => {
   console.log('✅ MongoDB Atlas Connected!');
 }).catch((err) => {
   console.error('❌ MongoDB Atlas connection error:', err);
 });
-
-// app.listen(3100, () => {
-//   console.log(`✅ Server is running on port 3100`);
-// });
 
 
 
