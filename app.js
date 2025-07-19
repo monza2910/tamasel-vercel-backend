@@ -62,5 +62,7 @@ mongoose.connect(process.env.DATABASE_URL, {
   console.error('❌ MongoDB Atlas connection error:', err);
 });
 
-
+app.listen(3100, () => {
+  console.log(`✅ Server is running on port 3100`);
+});
 
