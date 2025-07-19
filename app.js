@@ -53,13 +53,14 @@ app.use(errorHandler);
 
 
 
-mongoose.connect(process.env.DATABASE_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
+mongoose.connect(process.env.DATABASE_URL).then(() => {
   console.log('✅ MongoDB Atlas Connected!');
 }).catch((err) => {
   console.error('❌ MongoDB Atlas connection error:', err);
+});
+
+app.listen(3100, () => {
+  console.log(`✅ Server is running on port 3100`);
 });
 
 
